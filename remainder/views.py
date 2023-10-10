@@ -2,7 +2,7 @@ from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render,redirect
 from django.urls import reverse_lazy
-from django.views.generic import View,TemplateView,FormView,ListView,DetailView
+from django.views.generic import View,TemplateView,FormView,ListView,DetailView,UpdateView
 from remainder.forms import RegistrationForm,LoginForm,TodoCreateForm,TodoChangeForm
 from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
@@ -108,7 +108,7 @@ class TodoDetailView(DetailView):
 
   
 @method_decorator(signin_required,name="dispatch")  
-class TodoUpdateView(View):
+class TodoUpdateView(UpdateView):
     template_name="remainder/todo_edit.html"
     form_class=TodoChangeForm
     model=Todos

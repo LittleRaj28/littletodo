@@ -8,7 +8,7 @@ from remainder.views import SignUpView,SignInView,IndexView,TodoCreateView,TodoL
 
 urlpatterns=[
 path("signup",SignUpView.as_view(),name="signup"),
-path("signin",SignInView.as_view(),name="signin"),
+path("",SignInView.as_view(),name="signin"),
 path("index",IndexView.as_view(),name="index"),
 path("add/",TodoCreateView.as_view(),name="add-todo"),
 path("all/",TodoListView.as_view(),name="list-todo"),

@@ -28,6 +28,9 @@
                     <td>{{todo.status}}</td>
                     <td>{{todo.created_date}}</td>
                     <td>
+                        <a href="{% url 'detail-todo' todo.id%}"> View</a>
+                        <a href="{% url 'change-todo' todo.id%}">Update</a>
+                        <a href="{% url 'remove-todo' todo.id%}">Delete</a>
                         
                     </td>
                 </tr>
