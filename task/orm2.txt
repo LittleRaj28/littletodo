@@ -1,0 +1,33 @@
+Employees
+1. orm query for inserting an employee records
+Employees.objects.create(empno="",ename="",hiredate="",mgr)
+
+2.orm query for fetching all employee records
+Employees.objects.all()
+
+3.orm query for fetching all employee names only
+Employees.objects.all().values("ename)
+
+4.orm query for update smith salary as 1000
+Employees.objects.filter(empno=7369).update(salary=1000)
+
+5.orm query for filtering ANALYST details
+Employees.objects.filter(job="ANALYST").values("ename")
+
+6.fetch employee details those who working dept=[10,30]
+Employees.objects.filter(deptno__in=[10,30])
+
+7.print employee names those who are not MANAGER
+Employees.objects.all().exclude(job="MANAGER").values("ename")
+
+8.print employee details whose salary in range of 900-1000
+Employees.objects.filter(sal__gte=900,sal_lte=1000)
+
+9.print all job
+Employees.objects.all().values_list("job")
+
+10.to print unique departments
+Employees.objects.all().values_list("deptno",flat=True).distinct()
+
+11.remove employee whose id=7369
+Employees.objects.filter(id=7369).delete()

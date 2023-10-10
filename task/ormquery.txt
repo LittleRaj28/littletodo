@@ -1,0 +1,76 @@
+from task.models import Todos
+
+modelname.objects.create(fieldname=value)
+
+Todos.objects.create(title="water bill",user="hari")
+
+
+fetch all records==>>
+[select* from Todos]
+
+queryset
+qs=modelname.objects.all()
+qs=Todos.objects.all()
+
+
+orm query for filtered records
+filter()
+
+
+qs=Todos.objects.filter(user="hari")
+
+fetch all pending todos inserted by user Vishnu
+qs=Todos.objects.filter(user="Vishnu",status=False)   
+
+fetch todo with id=1
+if we are fetching only one field we have to use get()
+qs=Todos.objects.get(id=1)
+
+orm query to update
+modelname.objects.filter(id=1).update(status=True)
+
+fetch all records whose id in range of 2-6
+qs=Todos.objects.filter(id__gte=2,id__lte=6)
+
+
+lookup==>>
+gt=greater than
+lt=less than
+gte=greater than or equal to
+lte=less than or equal to
+
+in()
+
+qs=Todos.objects.filter(title__in=["emi","cars"])
+
+
+orm query for listing a specific column
+qs=modelname.objects.all().values("id")
+
+to exclude any value
+Todos.objects.all().exclude(user="Appu")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
